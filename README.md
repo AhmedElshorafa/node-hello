@@ -1,13 +1,20 @@
-# Node Hello World
+# Infrastructure using Terraform
+1- Go to terraform/prod/ .
+2- Deploy Terraform code using init, plan, apply.
 
-Simple node.js app that servers "hello world"
+# Setup Github actions pipeline
+1- Add your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to github actions secrets.
 
-Great for testing simple deployments to the cloud
+# Deploy 
+1- Push all your changes to your repo, pipeline should trigger automatically.
+2- You can Access the app using the load balancer dns name using HTTP.
 
-## Run It
+.......................................................
 
-`npm start`
+# Assumptions
+1- HTTPS wasn't used as it will  cost a certificate from ACM.
+2- Local terraform state file was used and was added to .gitignore file. 
 
-# This workflow will build and push a new container image to Amazon ECR,
-# and then will deploy a new task definition to Amazon ECS, when there is a push to the "master" branch.
+
+
 
