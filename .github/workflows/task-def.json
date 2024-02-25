@@ -1,0 +1,30 @@
+[
+    {
+        "name": "web-app",
+        "image": "013859417906.dkr.ecr.eu-west-1.amazonaws.com/web-app:latest",
+        "cpu": 0,
+        "portMappings": [
+            {
+                "name": "app-3000-tcp",
+                "containerPort": 3000,
+                "hostPort": 3000,
+                "protocol": "tcp",
+                "appProtocol": "http"
+            }
+        ],
+        "essential": true,
+        "environment": [],
+        "mountPoints": [],
+        "volumesFrom": [],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-create-group": "true",
+                "awslogs-group": "/ecs/web-app",
+                "awslogs-region": "eu-west-1",
+                "awslogs-stream-prefix": "ecs"
+            },
+            "secretOptions": []
+        }
+    }
+]
